@@ -4,7 +4,9 @@ export default function Navigation() {
     return (
         <>
             <div className="navigation">
-                <div>Logo</div>
+                <Link className="logo-container" to="/">
+                    <div>Logo</div>
+                </Link>
                 <div className="nav-links-container">
                     <Link to="/shop" className="nav-link">
                         SHOP
