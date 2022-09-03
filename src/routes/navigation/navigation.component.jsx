@@ -1,12 +1,17 @@
-import {Outlet} from "react-router-dom";
+import {Outlet, Link} from "react-router-dom";
 
 export default function Navigation() {
     return (
-        <div>
-            <div>
-                <h1>I am the navigation bar</h1>
+        <>
+            <div className="navigation">
+                <div>Logo</div>
+                <div className="nav-links-container">
+                    <Link to="/shop" className="nav-link">
+                        SHOP
+                    </Link>
+                </div>
             </div>
             <Outlet/>
-        </div>
+        </>
     )
 }
