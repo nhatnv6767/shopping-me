@@ -2,7 +2,8 @@ export default function SignUpForm() {
     return (
         <div>
             <h1>Sign up with your email and password</h1>
-            <form action="">
+            <form onSubmit={() => {
+            }}>
                 <label>Display Name</label>
                 <input type="text" required/>
 
@@ -14,6 +15,8 @@ export default function SignUpForm() {
 
                 <label>Confirm Password</label>
                 <input type="password" required/>
+
+                <button type="submit"></button>
             </form>
         </div>
     );
