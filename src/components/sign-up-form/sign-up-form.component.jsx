@@ -13,6 +13,11 @@ export default function SignUpForm() {
 
     console.log(formFields)
 
+    const handeSubmit = async (event) => {
+        event.preventDefault();
+        
+    }
+
     const handleChange = (event) => {
         const {name, value} = event.target;
         setFormFields({...formFields, [name]: value})
