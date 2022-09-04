@@ -12,7 +12,8 @@ export default function SignUpForm() {
     const {displayName, email, password, confirmPassword} = formFields;
 
     const handleChange = (event) => {
-
+        const {name, value} = event.target;
+        setFormFields({...formFields, [name]: value})
     }
 
     return (
@@ -26,6 +27,7 @@ export default function SignUpForm() {
                     required
                     onChange={handleChange}
                     name="displayName"
+                    value={displayName}
                 />
 
                 <label>Email</label>
@@ -34,6 +36,7 @@ export default function SignUpForm() {
                     required
                     onChange={handleChange}
                     name="email"
+                    value={email}
                 />
 
                 <label>Password</label>
@@ -42,6 +45,7 @@ export default function SignUpForm() {
                     required
                     onChange={handleChange}
                     name="password"
+                    value={password}
                 />
 
                 <label>Confirm Password</label>
@@ -50,6 +54,7 @@ export default function SignUpForm() {
                     required
                     onChange={handleChange}
                     name="confirmPassword"
+                    value={confirmPassword}
                 />
 
                 <button type="submit">Sign Up</button>
