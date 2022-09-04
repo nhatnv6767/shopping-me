@@ -1,6 +1,5 @@
 import {useState} from "react";
 import {
-    createAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth,
     signInWithGooglePopup
 } from "../../utils/firebase/firebase.utils";
@@ -24,7 +23,7 @@ export default function SignInForm() {
 
     const signInWithGoogle = async () => {
         const {user} = await signInWithGooglePopup();
-        const userDocRef = await createUserDocumentFromAuth(user)
+        await createUserDocumentFromAuth(user)
     }
 
     const handeSubmit = async (event) => {
@@ -71,6 +70,7 @@ export default function SignInForm() {
 
 
                 <Button type="submit">Sign In</Button>
+                <Button onClick={signInWithGoogle}>Google sign in</Button>
             </form>
         </div>
     );
