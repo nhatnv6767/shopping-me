@@ -15,7 +15,11 @@ export default function SignUpForm() {
 
     const handeSubmit = async (event) => {
         event.preventDefault();
-        
+
+        if (password !== confirmPassword) {
+            alert(`Passwords do not match`)
+            return;
+        }
     }
 
     const handleChange = (event) => {
