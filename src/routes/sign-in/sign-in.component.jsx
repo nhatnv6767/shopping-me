@@ -7,11 +7,16 @@ import {
 import {getRedirectResult} from "firebase/auth"
 import {useEffect} from "react";
 
-export default function SignIn() {
+const SignIn = () => {
 
-    useEffect(async () => {
-        const response = await getRedirectResult(auth)
-        console.log(response)
+    useEffect(() => {
+        async function getResponse() {
+            const response = await getRedirectResult(auth)
+            console.log(response)
+        }
+
+        getResponse()
+
     }, [])
 
     const logGoogleUser = async () => {
@@ -31,3 +36,5 @@ export default function SignIn() {
         </div>
     );
 }
+
+export default SignIn;
