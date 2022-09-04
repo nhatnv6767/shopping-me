@@ -3,6 +3,10 @@ import "./form-input.styles.scss"
 export default function FormInput({label, ...otherProps}) {
     return (
         <div className="group">
+            <input
+                className="form-input"
+                {...otherProps}
+            />
             {
                 label && (
                     <label
@@ -13,10 +17,6 @@ export default function FormInput({label, ...otherProps}) {
                 )
             }
 
-            <input
-                className="form-input"
-                {...otherProps}
-            />
         </div>
     );
 }
