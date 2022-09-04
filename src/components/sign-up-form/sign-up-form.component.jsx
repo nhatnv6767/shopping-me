@@ -1,4 +1,15 @@
+import {useState} from "react";
+
+const defaultFormFields = {
+    displayName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+}
 export default function SignUpForm() {
+
+    const [formFields, setFormFields] = useState(defaultFormFields)
+
     return (
         <div>
             <h1>Sign up with your email and password</h1>
