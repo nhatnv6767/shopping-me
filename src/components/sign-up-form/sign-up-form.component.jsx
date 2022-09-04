@@ -49,42 +49,39 @@ export default function SignUpForm() {
             <form onSubmit={handeSubmit}>
                 <FormInput
                     label="Display Name"
-                    inputOptions={{
-                        type: "text",
-                        required: true,
-                        onChange: handleChange,
-                        name: "displayName",
-                        value: displayName
-                    }}
-
+                    type="text"
+                    required
+                    onChange={handleChange}
+                    name="displayName"
+                    value={displayName}
                 />
 
-                {/*<FormInput*/}
-                {/*    label="Email"*/}
-                {/*    type="email"*/}
-                {/*    required*/}
-                {/*    onChange={handleChange}*/}
-                {/*    name="email"*/}
-                {/*    value={email}*/}
-                {/*/>*/}
+                <FormInput
+                    label="Email"
+                    type="email"
+                    required
+                    onChange={handleChange}
+                    name="email"
+                    value={email}
+                />
 
-                {/*<FormInput*/}
-                {/*    label="Password"*/}
-                {/*    type="password"*/}
-                {/*    required*/}
-                {/*    onChange={handleChange}*/}
-                {/*    name="password"*/}
-                {/*    value={password}*/}
-                {/*/>*/}
+                <FormInput
+                    label="Password"
+                    type="password"
+                    required
+                    onChange={handleChange}
+                    name="password"
+                    value={password}
+                />
 
-                {/*<FormInput*/}
-                {/*    label="Confirm Password"*/}
-                {/*    type="password"*/}
-                {/*    required*/}
-                {/*    onChange={handleChange}*/}
-                {/*    name="confirmPassword"*/}
-                {/*    value={confirmPassword}*/}
-                {/*/>*/}
+                <FormInput
+                    label="Confirm Password"
+                    type="password"
+                    required
+                    onChange={handleChange}
+                    name="confirmPassword"
+                    value={confirmPassword}
+                />
 
                 <button type="submit">Sign Up</button>
             </form>
