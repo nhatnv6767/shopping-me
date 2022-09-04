@@ -16,7 +16,7 @@ export default function SignUpForm() {
                 <label>Confirm Password</label>
                 <input type="password" required/>
 
-                <button type="submit"></button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     );
