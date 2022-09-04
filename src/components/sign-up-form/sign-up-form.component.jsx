@@ -22,9 +22,13 @@ export default function SignUpForm() {
         try {
             const {user} = await createAuthUserWithEmailAndPassword(email, password)
             await createUserDocumentFromAuth(user, {displayName})
-            
-        } catch (e) {
-            console.log("User creation encountered an error", e)
+
+        } catch (error) {
+            if (error.code === 'auth/email-already-in-use') {
+                alert("Cannot create user, email already in use");
+            } else {
+                console.log("User creation encountered an error", error)
+            }
         }
     }
 
