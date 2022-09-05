@@ -35,7 +35,6 @@ export default function SignInForm() {
 
         try {
             const {user} = await signInAuthUserWithEmailAndPassword(email, password)
-            setCurrentUser(user)
             resetFormFields()
 
         } catch (error) {
