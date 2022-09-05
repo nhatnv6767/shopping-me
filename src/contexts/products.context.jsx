@@ -11,6 +11,6 @@ export const ProductsProvider = ({children}) => {
     /* Creating a new object with the key of products and the value of products. */
     const value = {products}
     return (
-        <ProductsContext.Provider value={products}>{children}</ProductsContext.Provider>
+        <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>
     )
 }
