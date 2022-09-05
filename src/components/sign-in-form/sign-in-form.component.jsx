@@ -36,6 +36,16 @@ export default function SignInForm() {
             resetFormFields()
 
         } catch (error) {
+            switch (error.code) {
+                case "auth/wrong-password":
+                    alert("Incorrect password for email")
+                    break;
+                case "auth/user-not-found":
+                    alert("No user associated with this email")
+                    break;
+                default:
+                    console.log(error)
+            }
 
         }
     }
