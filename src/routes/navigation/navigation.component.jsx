@@ -7,7 +7,7 @@ import {UserContext} from "../../contexts/user.context";
 
 export default function Navigation() {
     const {currentUser} = useContext(UserContext)
-    console.log(currentUser)
+    // console.log(currentUser)
     return (
         <>
             <div className="navigation">
