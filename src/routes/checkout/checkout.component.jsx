@@ -23,23 +23,22 @@ export default function Checkout() {
                     <span>Remove</span>
                 </div>
             </div>
-            <div>
-                {
-                    cartItems.map((cartItem) => {
-                        const {id, name, quantity} = cartItem
-                        return (
-                            <div key={id}>
-                                <h2>{name}</h2>
-                                <span>{quantity}</span>
-                                <br/>
-                                <span onClick={() => removeItemFromCart(cartItem)}>decrement</span>
-                                <br/>
-                                <span onClick={() => addItemToCart(cartItem)}>increment</span>
-                            </div>
-                        )
-                    })
-                }
-            </div>
+            {
+                cartItems.map((cartItem) => {
+                    const {id, name, quantity} = cartItem
+                    return (
+                        <div key={id}>
+                            <h2>{name}</h2>
+                            <span>{quantity}</span>
+                            <br/>
+                            <span onClick={() => removeItemFromCart(cartItem)}>decrement</span>
+                            <br/>
+                            <span onClick={() => addItemToCart(cartItem)}>increment</span>
+                        </div>
+                    )
+                })
+            }
+            <span className="total">Total: 0</span>
         </div>
     );
 }
