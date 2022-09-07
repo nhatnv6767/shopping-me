@@ -15,6 +15,8 @@ export default function Checkout() {
                             <div key={id}>
                                 <h2>{name}</h2>
                                 <span>{quantity}</span>
+                                <span>decrement</span>
+                                <span>increment</span>
                             </div>
                         )
                     })
