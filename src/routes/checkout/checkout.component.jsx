@@ -3,7 +3,7 @@ import {useContext} from "react";
 import {CartContext} from "../../contexts/cart.context";
 
 export default function Checkout() {
-    const {cartItems} = useContext(CartContext)
+    const {cartItems, addItemToCart} = useContext(CartContext)
     return (
         <div>
             <h1>I am the checkout page</h1>
@@ -16,7 +16,7 @@ export default function Checkout() {
                                 <h2>{name}</h2>
                                 <span>{quantity}</span>
                                 <span>decrement</span>
-                                <span>increment</span>
+                                <span onClick={() => addItemToCart(cartItem)}>increment</span>
                             </div>
                         )
                     })
