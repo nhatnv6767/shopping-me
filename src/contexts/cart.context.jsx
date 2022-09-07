@@ -19,6 +19,20 @@ const addCartItem = (cartItems, productToAdd) => {
     return [...cartItems, {...productToAdd, quantity: 1}]
 }
 
+const removeCartItem = (cartItems, cartItemToRemove) => {
+    // find the cart item to remove
+    const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToRemove.id)
+
+    // check if quantity is equal to 1, if it is remove that item from the cart
+    if (existingCartItem.quantity === 1) {
+        /* Filtering out the cartItemToRemove from the cartItems array. */
+        // nếu cartItem.id không bằng id mà chúng ta đang cố gắng xoá, hãy giữ nguyên giá trị
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+    }
+
+    // return back cartitems with matching cart item with reduced quantity
+}
+
 export const CartContext = createContext({
     isCartOpen: false,
     setIsCartOpen: () => {
