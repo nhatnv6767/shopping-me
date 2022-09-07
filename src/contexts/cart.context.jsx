@@ -27,8 +27,14 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     if (existingCartItem.quantity === 1) {
         /* Filtering out the cartItemToRemove from the cartItems array. */
         // nếu cartItem.id không bằng id mà chúng ta đang cố gắng xoá, hãy giữ nguyên giá trị
+        // chúng ta chỉ muốn xoá giá trị mà trong đó cartItem.id = với giá trị mà chúng ta đang cố gắng xoá
         return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
     }
+
+    return cartItems.map((cartItem) => cartItem.id === cartItemToRemove.id
+        ? {...cartItem, quantity: cartItem.quantity - 1}
+        : cartItem
+    )
 
     // return back cartitems with matching cart item with reduced quantity
 }
@@ -60,9 +66,9 @@ export const CartProvider = ({children}) => {
         setCartItems(addCartItem(cartItems, productToAdd))
     }
     const removeItemFromCart = (cartItemToRemove) => {
-        setCartItems(addCartItem(cartItems, cartItemToRemove))
+        setCartItems(removeCartItem(cartItems, cartItemToRemove))
     }
-    const value = {isCartOpen, setIsCartOpen, addItemToCart, cartItems, cartCount}
+    const value = {isCartOpen, setIsCartOpen, addItemToCart, cartItems, cartCount, removeItemFromCart}
     return (
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )
