@@ -16,7 +16,7 @@ export const CategoriesProvider = ({children}) => {
         getCategoriesMap()
     }, [])
     /* Creating a new object with the key of products and the value of products. */
-    const value = {products}
+    const value = {categoriesMap}
     return (
         <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
     )
