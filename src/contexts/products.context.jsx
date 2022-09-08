@@ -1,6 +1,6 @@
 import {createContext, useEffect, useState} from "react";
 
-import {addCollectionAndDocuments} from "../utils/firebase/firebase.utils";
+import {getCategoriesAndDocuments} from "../utils/firebase/firebase.utils";
 
 export const ProductsContext = createContext({
     products: [],
@@ -8,6 +8,13 @@ export const ProductsContext = createContext({
 
 export const ProductsProvider = ({children}) => {
     const [products, setProducts] = useState([])
+    useEffect(() => {
+        const getCategoriesMap = async () => {
+            const categoryMap = await getCategoriesAndDocuments()
+            console.log(categoryMap)
+        }
+        getCategoriesMap()
+    }, [])
     /* Creating a new object with the key of products and the value of products. */
     const value = {products}
     return (
