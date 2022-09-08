@@ -1,11 +1,11 @@
 import "./shop.styles.scss"
 import {Routes, Route} from "react-router-dom"
-import CategoryPreview from "../../components/category-preview/category-preview.component";
+import CategoriesPreview from "../categories-preview/categories-preview.component";
 
 export default function Shop() {
     return (
         <Routes>
-            <Route index element={<CategoryPreview/>}/>
+            <Route index element={<CategoriesPreview/>}/>
         </Routes>
     );
 }
