@@ -1,6 +1,7 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 
 import SHOP_DATA from "../shop-data.js"
+import {addCollectionAndDocuments} from "../utils/firebase/firebase.utils";
 
 export const ProductsContext = createContext({
     products: [],
@@ -8,6 +9,12 @@ export const ProductsContext = createContext({
 
 export const ProductsProvider = ({children}) => {
     const [products, setProducts] = useState([])
+    useEffect(() => {
+        const initial = async () => {
+            await addCollectionAndDocuments("categories", SHOP_DATA)
+        }
+        initial()
+    }, [])
     /* Creating a new object with the key of products and the value of products. */
     const value = {products}
     return (
