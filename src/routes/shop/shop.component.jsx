@@ -4,14 +4,26 @@ import ProductCard from "../../components/product-card/product-card.component";
 import "./shop.styles.scss"
 
 export default function Shop() {
-    const {} = useContext(CategoriesContext)
+    const {categoriesMap} = useContext(CategoriesContext)
     return (
-        <div className="products-container">
-            {/*{*/}
-            {/*    categoriesMap.map((category) => (*/}
-            {/*        <ProductCard key={category.id} product={category}/>*/}
-            {/*    ))*/}
-            {/*}*/}
-        </div>
+        <>
+
+            {
+                Object.keys(categoriesMap).map(title => {
+                    <>
+                        <h2>{title}</h2>
+                        <div className="products-container">
+                            {
+                                categoriesMap[title].map((category) => (
+                                    <ProductCard key={category.id} product={category}/>
+                                ))
+                            }
+                        </div>
+                    </>
+                })
+            }
+
+
+        </>
     );
 }
