@@ -9,18 +9,18 @@ export default function Shop() {
         <>
 
             {
-                Object.keys(categoriesMap).map(title => {
+                Object.keys(categoriesMap).map(title => (
                     <>
                         <h2>{title}</h2>
                         <div className="products-container">
                             {
-                                categoriesMap[title].map((category) => (
-                                    <ProductCard key={category.id} product={category}/>
+                                categoriesMap[title].map((product) => (
+                                    <ProductCard key={product.id} product={product}/>
                                 ))
                             }
                         </div>
                     </>
-                })
+                ))
             }
 
 
