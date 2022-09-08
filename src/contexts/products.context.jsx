@@ -2,8 +2,8 @@ import {createContext, useEffect, useState} from "react";
 
 import {getCategoriesAndDocuments} from "../utils/firebase/firebase.utils";
 
-export const ProductsContext = createContext({
-    products: [],
+export const CategoriesContext = createContext({
+    categoriesMap: [],
 })
 
 export const ProductsProvider = ({children}) => {
@@ -18,6 +18,6 @@ export const ProductsProvider = ({children}) => {
     /* Creating a new object with the key of products and the value of products. */
     const value = {products}
     return (
-        <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>
+        <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
     )
 }
