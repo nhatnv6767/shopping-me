@@ -13,7 +13,7 @@ export default function Shop() {
                 Object.keys(categoriesMap).map(title => {
                     const products = categoriesMap[title]
                     return (
-                        <CategoryPreview key={title} title={title} product={products}/>
+                        <CategoryPreview key={title} title={title} products={products}/>
                     )
                 })
             }
