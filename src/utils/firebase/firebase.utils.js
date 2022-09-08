@@ -53,7 +53,7 @@ export const addCollectionAndDocuments = async (
 
     // <shop-data.js>
     objectsToAdd.forEach((object) => {
-        const docRef = doc(collectionRef, object[field].toLowerCase())
+        const docRef = doc(collectionRef, object.title.toLowerCase())
         batch.set(docRef, object)
     })
 
