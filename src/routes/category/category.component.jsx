@@ -15,6 +15,7 @@ export default function Category() {
     }, [category, categoriesMap])
     return (
         <div className="category-container">
+            <h2 className="title">{category}</h2>
             {
                 products &&
                 products.length &&
