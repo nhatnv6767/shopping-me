@@ -10,7 +10,7 @@ export default function FormInput({label, ...otherProps}) {
             {
                 label && (
                     <FormInputLabel
-                        className={`${otherProps.value.length ? "shrink" : ""} form-input-label`}
+                        shrink={otherProps.value.length}
                     >
                         {label}
                     </FormInputLabel>
