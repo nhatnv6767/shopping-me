@@ -1,3 +1,7 @@
+import styled from "styled-components"
+
+const NavigationContainer = styled.div`
+`
 .navigation {
   height: 70px;
   width: 100%;
