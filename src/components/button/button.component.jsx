@@ -6,7 +6,7 @@ inverted
 google sign in
 
  */
-import "./button.styles.scss"
+import "./button.styles"
 
 const BUTTON_TYPES_CLASSES = {
     google: "google-sign-in",
