@@ -66,24 +66,4 @@ export const DirectoryItemContainer = styled.div`
   }
 `
 
-// .directory-item-container {
 
-//
-
-//
-//   &.large {
-//     height: 380px;
-//   }
-//
-
-//
-//   .background-image {
-
-//   }
-//
-//   .body {
-
-//
-
-//   }
-// }
