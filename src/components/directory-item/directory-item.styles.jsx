@@ -56,6 +56,14 @@ export const DirectoryItemContainer = styled.div`
       opacity: 0.9;
     }
   }
+
+  &:first-child {
+    margin-right: 7.5px;
+  }
+
+  &:last-child {
+    margin-left: 7.5px;
+  }
 `
 
 // .directory-item-container {
@@ -67,13 +75,7 @@ export const DirectoryItemContainer = styled.div`
 //     height: 380px;
 //   }
 //
-//   &:first-child {
-//     margin-right: 7.5px;
-//   }
-//
-//   &:last-child {
-//     margin-left: 7.5px;
-//   }
+
 //
 //   .background-image {
 
