@@ -1,5 +1,8 @@
-$sub-color: grey;
-$main-color: black;
+import styled, {css} from "styled-components";
+
+const subColor = 'grey';
+const mainColor = 'black';
+
 
 @mixin shrinkLabel {
   top: -14px;
