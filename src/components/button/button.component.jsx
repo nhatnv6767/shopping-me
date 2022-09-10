@@ -23,12 +23,12 @@ const getButton = (buttonType = BUTTON_TYPES_CLASSES.base) => (
 )
 
 export default function Button({children, buttonType, ...otherProps}) {
+    const CustomButton = getButton(buttonType)
     return (
-        <button
-            className={`button-container ${BUTTON_TYPES_CLASSES[buttonType]}`}
+        <CustomButton
             {...otherProps}
         >
             {children}
-        </button>
+        </CustomButton>
     );
 }
