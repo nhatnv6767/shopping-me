@@ -4,11 +4,25 @@ const subColor = 'grey';
 const mainColor = 'black';
 
 
-const shrinkLabel = css`
+const shrinkLabelStyles = css`
   top: -14px;
   font-size: 12px;
-  color: $main-color;
+  color: ${mainColor};
 `
+
+    const FormInputLabel = styled.label`
+      color: ${subColor};
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 300ms ease all;
+      
+      ${({shrink}) => shrink && shrinkLabelStyles}
+      
+    `
 
 .group {
   position: relative;
@@ -41,17 +55,6 @@ const shrinkLabel = css`
   }
 
   .form-input-label {
-    color: $sub-color;
-    font-size: 16px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 300ms ease all;
 
-    &.shrink {
-      @include shrinkLabel();
-    }
   }
 }
