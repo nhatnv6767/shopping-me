@@ -4,11 +4,11 @@ const subColor = 'grey';
 const mainColor = 'black';
 
 
-@mixin shrinkLabel {
+const shrinkLabel = css`
   top: -14px;
   font-size: 12px;
   color: $main-color;
-}
+`
 
 .group {
   position: relative;
