@@ -16,28 +16,28 @@ export default function Navigation() {
     return (
         <>
             <NavigationContainer>
-                {/*<Link className="logo-container" to="/">*/}
-                {/*    <CrwnLogo className="logo"/>*/}
-                {/*</Link>*/}
-                {/*<div className="nav-links-container">*/}
-                {/*    <Link to="/shop" className="nav-link">*/}
-                {/*        SHOP*/}
-                {/*    </Link>*/}
-                {/*    {*/}
-                {/*        currentUser ? (*/}
-                {/*            <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>*/}
-                {/*        ) : (*/}
-                {/*            <Link to="/auth" className="nav-link">*/}
-                {/*                SIGN IN*/}
-                {/*            </Link>*/}
-                {/*        )*/}
-                {/*    }*/}
+                <Link className="logo-container" to="/">
+                    <CrwnLogo className="logo"/>
+                </Link>
+                <div className="nav-links-container">
+                    <Link to="/shop" className="nav-link">
+                        SHOP
+                    </Link>
+                    {
+                        currentUser ? (
+                            <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>
+                        ) : (
+                            <Link to="/auth" className="nav-link">
+                                SIGN IN
+                            </Link>
+                        )
+                    }
 
-                {/*    <CartIcon/>*/}
-                {/*</div>*/}
-                {/*{*/}
-                {/*    isCartOpen && <CartDropdown/>*/}
-                {/*}*/}
+                    <CartIcon/>
+                </div>
+                {
+                    isCartOpen && <CartDropdown/>
+                }
 
             </NavigationContainer>
             <Outlet/>
