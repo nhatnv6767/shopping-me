@@ -91,6 +91,8 @@ export const CartProvider = ({children}) => {
     }, [cartItems])
 
     const updateCartItemsReducer = (newCartItems) => {
+
+
         /*
         generate newCartTotal
         generate newCartCount
@@ -104,13 +106,13 @@ export const CartProvider = ({children}) => {
     }
 
     const addItemToCart = (productToAdd) => {
-        setCartItems(addCartItem(cartItems, productToAdd))
+        const newCartItems = addCartItem(cartItems, productToAdd)
     }
     const removeItemFromCart = (cartItemToRemove) => {
-        setCartItems(removeCartItem(cartItems, cartItemToRemove))
+        const newCartItems = removeCartItem(cartItems, cartItemToRemove)
     }
     const clearItemFromCart = (cartItemToClear) => {
-        setCartItems(clearCartItem(cartItems, cartItemToClear))
+        const newCartItems = clearCartItem(cartItems, cartItemToClear)
     }
     const value = {
         isCartOpen,
