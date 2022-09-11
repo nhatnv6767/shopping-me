@@ -1,0 +1,1 @@
+const createAction = (type, action) => ({type, payload})
