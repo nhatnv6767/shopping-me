@@ -90,6 +90,19 @@ export const CartProvider = ({children}) => {
         setCartTotal(newCartTotal)
     }, [cartItems])
 
+    const updateCartItemsReducer = (newCartItems) => {
+        /*
+        generate newCartTotal
+        generate newCartCount
+
+        dispatch new action with payload = {
+        newCartItems,
+        newCartTotal,
+        newCartCount,
+        }
+        */
+    }
+
     const addItemToCart = (productToAdd) => {
         setCartItems(addCartItem(cartItems, productToAdd))
     }
