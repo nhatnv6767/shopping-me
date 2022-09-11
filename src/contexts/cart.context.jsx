@@ -95,11 +95,19 @@ export const CartProvider = ({children}) => {
     //     setCartTotal(newCartTotal)
     // }, [cartItems])
 
-    const [state, dispatch] = useReducer()
+    const [state, dispatch] = useReducer(cartReducer, INITIAL_STATE)
     const updateCartItemsReducer = (newCartItems) => {
         const newCartCount = newCartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
         const newCartTotal = newCartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0)
 
+        dispatch({
+            type: 'SET_CART_ITEMS',
+            payload: {
+                cartItems: newCartItems,
+                cartTotal: newCartTotal,
+                cartCount: newCartCount,
+            }
+        })
 
         /*
         generate newCartTotal
