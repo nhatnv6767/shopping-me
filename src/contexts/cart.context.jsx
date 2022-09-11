@@ -107,12 +107,15 @@ export const CartProvider = ({children}) => {
 
     const addItemToCart = (productToAdd) => {
         const newCartItems = addCartItem(cartItems, productToAdd)
+        updateCartItemsReducer(newCartItems)
     }
     const removeItemFromCart = (cartItemToRemove) => {
         const newCartItems = removeCartItem(cartItems, cartItemToRemove)
+        updateCartItemsReducer(newCartItems)
     }
     const clearItemFromCart = (cartItemToClear) => {
         const newCartItems = clearCartItem(cartItems, cartItemToClear)
+        updateCartItemsReducer(newCartItems)
     }
     const value = {
         isCartOpen,
