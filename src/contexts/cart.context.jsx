@@ -59,7 +59,7 @@ export const CartContext = createContext({
 })
 
 const INITIAL_STATE = {
-    isCartOpen: true,
+    isCartOpen: false,
     cartItems: [],
     cartCount: 0,
     cartTotal: 0,
@@ -110,10 +110,17 @@ export const CartProvider = ({children}) => {
         const newCartItems = clearCartItem(cartItems, cartItemToClear)
         updateCartItemsReducer(newCartItems)
     }
+
+    const setIsCartOpen = (bool) => {
+        dispatch({
+            type: 'SET_IS_CART_OPEN',
+            payload: bool
+        })
+    }
+
     const value = {
         isCartOpen,
-        setIsCartOpen: () => {
-        },
+        setIsCartOpen,
         addItemToCart,
         cartItems,
         cartCount,
