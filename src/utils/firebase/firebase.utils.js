@@ -69,11 +69,12 @@ export const getCategoriesAndDocuments = async () => {
 
     const querySnapshot = await getDocs(q)
     // create follow form
-    const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-        const {title, items} = docSnapshot.data()
-        acc[title.toLowerCase()] = items;
-        return acc;
-    }, {})
+    const categoryMap = querySnapshot.docs
+    //     .reduce((acc, docSnapshot) => {
+    //     const {title, items} = docSnapshot.data()
+    //     acc[title.toLowerCase()] = items;
+    //     return acc;
+    // }, {})
 
     return categoryMap;
 }
