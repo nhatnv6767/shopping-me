@@ -59,7 +59,7 @@ export const CartContext = createContext({
 })
 
 const INITIAL_STATE = {
-    isCartOpen: false,
+    isCartOpen: true,
     cartItems: [],
     cartCount: 0,
     cartTotal: 0,
@@ -112,7 +112,8 @@ export const CartProvider = ({children}) => {
     }
     const value = {
         isCartOpen,
-        setIsCartOpen,
+        setIsCartOpen: () => {
+        },
         addItemToCart,
         cartItems,
         cartCount,
