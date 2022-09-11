@@ -6,7 +6,7 @@ const INITIAL_STATE = {
     currentUser: null,
 }
 
-const userReducer = (state = INITIAL_STATE, action) => {
+export const userReducer = (state = INITIAL_STATE, action) => {
     console.log("userReducer action: ", action)
     const {type, payload} = action;
 
@@ -17,7 +17,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 currentUser: payload
             }
         default:
-            throw new Error(`Unhandled type ${type} in userReducer`);
+            return state
     }
 }
 
