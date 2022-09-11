@@ -58,6 +58,11 @@ export const CartContext = createContext({
     cartTotal: 0,
 })
 
+const CART_ACTION_TYPES = {
+    SET_CART_ITEMS: "SET_CART_ITEMS",
+    SET_IS_CART_OPEN: "SET_IS_CART_OPEN",
+}
+
 const INITIAL_STATE = {
     isCartOpen: false,
     cartItems: [],
@@ -68,10 +73,15 @@ const INITIAL_STATE = {
 const cartReducer = (state, action) => {
     const {type, payload} = action;
     switch (type) {
-        case 'SET_CART_ITEMS':
+        case CART_ACTION_TYPES.SET_CART_ITEMS:
             return {
                 ...state,
                 ...payload,
+            }
+        case CART_ACTION_TYPES.SET_IS_CART_OPEN:
+            return {
+                ...state,
+                isCartOpen: payload,
             }
         default:
             throw new Error(`Unhandled type of ${type} in cartReducer`)
