@@ -7,10 +7,18 @@ export const UserContext = createContext({
     setCurrentUser: () => null,
 })
 
+
 const userReducer = (state, action) => {
     const {type, payload} = action;
-    
-    return {}
+
+    switch (type) {
+        case "SET_CURRENT_USER":
+            return {
+                currentUser: payload
+            }
+        default:
+            throw new Error(`Unhandled type ${type} in userReducer`);
+    }
 }
 
 export const UserProvider = ({children}) => {
