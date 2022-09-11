@@ -98,7 +98,7 @@ export const CartProvider = ({children}) => {
         const newCartTotal = newCartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0)
 
         dispatch({
-            type: 'SET_CART_ITEMS',
+            type: CART_ACTION_TYPES.SET_CART_ITEMS,
             payload: {
                 cartItems: newCartItems,
                 cartTotal: newCartTotal,
