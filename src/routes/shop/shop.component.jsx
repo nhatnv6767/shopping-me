@@ -11,8 +11,9 @@ export default function Shop() {
     const dispatch = useDispatch()
     useEffect(() => {
         const getCategoriesMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments()
-            dispatch(setCategoriesMap(categoryMap))
+            const categoriesArray = await getCategoriesAndDocuments()
+            console.log(categoriesArray)
+            // dispatch(setCategoriesMap(categoryMap))
         }
         getCategoriesMap()
     }, [])
