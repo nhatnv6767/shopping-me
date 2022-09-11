@@ -70,33 +70,7 @@ export const getCategoriesAndDocuments = async () => {
     const querySnapshot = await getDocs(q)
     // create follow form
     return querySnapshot.docs.map(docSnapshot => docSnapshot.data())
-    //     .reduce((acc, docSnapshot) => {
-    //     const {title, items} = docSnapshot.data()
-    //     acc[title.toLowerCase()] = items;
-    //     return acc;
-    // }, {})
-
-    // return categoryMap;
 }
-/*
-{
-    hats: {
-        title: "Hats",
-        items: [
-          {},
-          {}
-        ]
-    },
-    sneakers: {
-        title: "Sneakers",
-        items: [
-          {},
-          {}
-        ]
-    }
-}
-
- */
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
     if (!userAuth) return;
