@@ -109,16 +109,6 @@ export const CartProvider = ({children}) => {
             }
         })
 
-        /*
-        generate newCartTotal
-        generate newCartCount
-
-        dispatch new action with payload = {
-        newCartItems,
-        newCartTotal,
-        newCartCount,
-        }
-        */
     }
 
     const addItemToCart = (productToAdd) => {
