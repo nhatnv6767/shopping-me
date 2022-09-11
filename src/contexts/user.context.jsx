@@ -7,8 +7,14 @@ export const UserContext = createContext({
     setCurrentUser: () => null,
 })
 
+const userReducer = (state, action) => {
+    const {type, payload} = action;
+    
+    return {}
+}
+
 export const UserProvider = ({children}) => {
-    const [currentUser, setCurrentUser] = useState(null)
+    // const [currentUser, setCurrentUser] = useState(null)
     const value = {currentUser, setCurrentUser}
 
     useEffect(() => {
