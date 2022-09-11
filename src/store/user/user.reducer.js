@@ -2,8 +2,11 @@ export const USER_ACTION_TYPES = {
     SET_CURRENT_USER: "SET_CURRENT_USER",
 }
 
+const INITIAL_STATE = {
+    currentUser: null,
+}
 
-const userReducer = (state, action) => {
+const userReducer = (state = INITIAL_STATE, action) => {
     console.log("userReducer action: ", action)
     const {type, payload} = action;
 
@@ -18,6 +21,3 @@ const userReducer = (state, action) => {
     }
 }
 
-const INITIAL_STATE = {
-    currentUser: null,
-}
