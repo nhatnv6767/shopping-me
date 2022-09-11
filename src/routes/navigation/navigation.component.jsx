@@ -13,9 +13,10 @@ import {
     NavLink,
 } from "./navigation.styles"
 import {useSelector} from "react-redux";
+import {selectCurrentUser} from "../../store/user/user.selector";
 
 export default function Navigation() {
-    const currentUser = useSelector((state) => state.user.currentUser)
+    const currentUser = useSelector(selectCurrentUser)
     const {isCartOpen} = useContext(CartContext)
 
     return (
