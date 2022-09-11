@@ -122,10 +122,9 @@ export const CartProvider = ({children}) => {
     }
 
     const setIsCartOpen = (bool) => {
-        dispatch({
-            type: CART_ACTION_TYPES.SET_IS_CART_OPEN,
-            payload: bool
-        })
+        dispatch(
+            createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, {bool})
+        )
     }
 
     const value = {
