@@ -10,8 +10,9 @@ export default function Category() {
     const {category} = useParams()
     const categoriesMap = useSelector(selectCategoriesMap)
     const [products, setProducts] = useState(categoriesMap[category])
-
+    console.log("render/re-rendering category component")
     useEffect(() => {
+        console.log("Effect fired calling setProducts")
         setProducts(categoriesMap[category])
     }, [category, categoriesMap])
     return (
